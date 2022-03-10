@@ -6,17 +6,31 @@ namespace ArchitektoraSystemowKomputerowych
     {
         static void Main(string[] args)
         {
-            string i;
+            Console.WriteLine("Provide 8 Hexadecimal numbers: ");
+            string AH = CheckIfHex(Console.ReadLine());
+            string AL = CheckIfHex(Console.ReadLine());
+            string BH = CheckIfHex(Console.ReadLine());
+            string BL = CheckIfHex(Console.ReadLine());
+            string CH = CheckIfHex(Console.ReadLine());
+            string CL = CheckIfHex(Console.ReadLine());
+            string DH = CheckIfHex(Console.ReadLine());
+            string DL = CheckIfHex(Console.ReadLine());
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7}" , AH, AL, BH, BL, CH, CL, DH, DL);
         }
-        static public string Check(string i)
+        static public string CheckIfHex(string i)
         {
             long output;
             if (i.Length == 2)
             {
                 long.TryParse(i, System.Globalization.NumberStyles.HexNumber, null, out output);
-                return Convert.ToString(output);
+                return i;
             }
-            return null;
+            else
+            {
+                Console.WriteLine("Wrong number, provide correct one: ");
+                i = Console.ReadLine();
+                return CheckIfHex(i);
+            }
         }
     }
 }

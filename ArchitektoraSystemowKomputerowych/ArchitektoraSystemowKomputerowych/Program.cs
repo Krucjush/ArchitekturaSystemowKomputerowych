@@ -15,7 +15,7 @@ namespace ArchitektoraSystemowKomputerowych
             string CL = CheckIfHex(Console.ReadLine());
             string DH = CheckIfHex(Console.ReadLine());
             string DL = CheckIfHex(Console.ReadLine());
-            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7}" , AH, AL, BH, BL, CH, CL, DH, DL);
+            Console.WriteLine($"{AH} {AL} {BH} {BL} {CH} {CL} {DH} {DL}");
         }
         static public string CheckIfHex(string i)
         {
